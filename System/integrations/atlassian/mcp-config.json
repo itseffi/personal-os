@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "atlassian": {
+      "command": "node",
+      "args": ["/path/to/servers/src/atlassian/dist/index.js"],
+      "env": {
+        "ATLASSIAN_EMAIL": "your-email@company.com",
+        "ATLASSIAN_API_TOKEN": "your-api-token",
+        "ATLASSIAN_DOMAIN": "yourcompany.atlassian.net"
+      }
+    }
+  }
+}

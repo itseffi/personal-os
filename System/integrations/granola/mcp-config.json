@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "granola": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/path/to/granola-ai-mcp-server",
+        "run",
+        "granola-mcp-server"
+      ],
+      "env": {
+        "KNOWLEDGE_PATH": "/path/to/personal-os/Knowledge"
+      }
+    }
+  }
+}

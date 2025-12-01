@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "google-calendar": {
+      "command": "node",
+      "args": ["/path/to/servers/src/google-calendar/dist/index.js"],
+      "env": {
+        "GOOGLE_CREDENTIALS_PATH": "/path/to/credentials.json",
+        "GOOGLE_TOKEN_PATH": "/path/to/token.json"
+      }
+    }
+  }
+}
