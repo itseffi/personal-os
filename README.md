@@ -96,8 +96,8 @@ Where a file lives tells the AI what it *is*:
 Your personal data stays local (gitignored):
 - `Tasks/` - your work
 - `Knowledge/` - your notes
+- `Resources/` - your samples
 - `BACKLOG.md` - your inbox
-- `GOALS.md` - your goals
 
 Only system files are version controlled.
 
