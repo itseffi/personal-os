@@ -73,6 +73,11 @@ flowchart TD
     A -. optional .-> M["MCP Integrations<br/>System/mcp + external services"]
     A -. optional .-> D["Subagents<br/>runtime-dependent delegation"]
     A --> E["Evals<br/>Evals/ + Evals/skills + scripts/run_skill_evals.py"]
+
+    classDef core fill:#ff9891,stroke:#2b2b2b,color:#111111,stroke-width:1.2px;
+    classDef optional fill:#ffd4d0,stroke:#2b2b2b,color:#111111,stroke-width:1.2px,stroke-dasharray: 4 3;
+    class U,A,I,S,W,F,E core;
+    class M,D optional;
 ```
 
 ## Pi Local/Offline Setup (Optional)
