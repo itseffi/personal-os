@@ -58,7 +58,7 @@ flowchart TD
 
 ## Agent Compatibility
 
-Personal OS is designed to work with Claude Code, Codex, Pi, and OpenClaw.
+Personal OS is designed to work with Claude Code, Codex, Pi, OpenClaw, and similar coding agent runtimes.
 
 - Shared behavior: `AGENTS.md`
 - Claude wrapper: `CLAUDE.md`
