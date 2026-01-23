@@ -1,6 +1,6 @@
 ![Agentic Personal OS Banner](Resources/assets/hero-banner-agentic-os.png)
 
-Your agentic personal operating system, built to automate high-leverage workflows with Claude Code, Codex, Pi, OpenClaw, and other coding agents and runtime platforms.
+**TL;DR**: An agentic personal operating system built to automate high-leverage workflows across Claude Code, Codex, Pi, OpenClaw, and other coding agents/runtime platforms.
 
 ---
 
@@ -19,12 +19,19 @@ Your agentic personal operating system, built to automate high-leverage workflow
    ```
 
 3. **Start using**
+   This automates high-leverage execution end-to-end: it converts raw backlog into prioritized, goal-aligned, verification-enforced action plans.
    ```
    Open this repo in your agent and run:
    1) "Process my backlog from BACKLOG.md into Tasks/**/*.md using AGENTS.md rules."
    2) "Show my P0/P1 unblocked tasks aligned to GOALS.md."
    3) "Propose today’s top 3 with required verification evidence and commands."
    ```
+
+---
+
+## Quick Links
+
+[Build Your Personal OS](Tutorials/build-your-personal-os.md) · [Workflows](Workflows/README.md) · [Canonical Skills](.agents/skills/README.md) · [Evals](Evals/README.md) · [Tutorials (index)](Tutorials/README.md)
 
 ---
 
@@ -51,7 +58,7 @@ flowchart TD
 
 ## Agent Compatibility
 
-This repo is designed to work with Claude Code, Codex, Pi, and OpenClaw.
+Personal OS is designed to work with Claude Code, Codex, Pi, and OpenClaw.
 
 - Shared behavior: `AGENTS.md`
 - Claude wrapper: `CLAUDE.md`
@@ -82,55 +89,11 @@ For Codex/OpenAI-style routing metadata, this repo includes:
 
 ## Pi Local/Offline Setup (Optional)
 
-You can run this repo with a fully local Pi + local model setup on Mac, no API keys required.
-
-### 1) Start a local model server
-
-```bash
-brew install llama.cpp
-llama-server \
-  -hf unsloth/GLM-4.7-Flash-GGUF:UD-Q4_K_XL \
-  --jinja \
-  --temp 0.7 --top-p 1.0 --min-p 0.01 \
-  --repeat-penalty 1.0 --fit on \
-  --port 8080
-```
-
-This exposes an OpenAI-compatible endpoint at `http://localhost:8080/v1`.
-
-### 2) Connect Pi to that server
-
-```bash
-npm install -g @mariozechner/pi-coding-agent
-```
-
-Create `~/.pi/agent/models.json`:
-
-```json
-{
-  "providers": {
-    "llama-cpp": {
-      "baseUrl": "http://localhost:8080/v1",
-      "api": "openai-completions",
-      "apiKey": "none",
-      "models": [{ "id": "GLM-4.7-Flash" }]
-    }
-  }
-}
-```
-
-Run:
-
-```bash
-pi
-```
-
-Then open this workspace and use canonical skills from `.agents/skills/`.
-See [Pi Agent Setup](Tutorials/pi-agent-setup.md) for repo-specific usage.
+You can run Personal OS with Pi using a local/offline model backend (for example `llama.cpp`) or a hosted endpoint. For full setup instructions (server launch, `~/.pi/agent/models.json`, and runtime configuration), see [Pi Agent Setup](Tutorials/pi-agent-setup.md).
 
 ---
 
-## What's Inside
+## File System Layout
 
 ```
 personal-os/
@@ -147,36 +110,7 @@ personal-os/
 └── System/             # MCP server, templates, integrations
 ```
 
----
-
-## Key Features
-
-### **AI Memory**
-Your agent remembers your preferences, goals, and working style across sessions through structured markdown files.
-
-### **Task Management**
-- YAML frontmatter for metadata
-- Priority levels (P0-P3)
-- Status tracking
-- Goal alignment
-
-### **Workflows**
-- Daily standup (pick your focus)
-- Backlog processing (turn notes into tasks)
-- Weekly reviews (reflect on progress)
-- Wrap-up protocol (document completed work)
-- Product & strategy pipelines (research, decisions, assumptions, opportunity mapping, stakeholder politics)
-
-### **Skills**
-- Planning (brainstorming, hypothesis design, writing plans)
-- Building (TDD, verification)
-- Analysis (debugging, root cause, MECE, problem structuring)
-- Research (JTBD, assumptions, experiments, opportunity solution tree, OST intake and target selection)
-- Decisions (decision journal, DAVCI, reversibility)
-- Strategy (crux diagnosis, competitor analysis, structured strategy, limit-based strategy, value-chain mapping)
-- Meetings (IDEAS summary, hidden agendas, influence, meeting power-dynamics)
-- Stakeholders (power map, difficult conversations, stakeholder risk review, framing/comms, executive update review, challenge questions)
-- Guardrails (think-before-coding, simplicity-first, surgical changes, goal-driven execution)
+Semantics by location: `Tasks/*.md` = actionable work, `Knowledge/*.md` = reference context.
 
 ---
 
@@ -192,16 +126,9 @@ Knowledge/**/*.md →    Context layer (reference)
 .agents/skills/* →    Capability layer (how the agent executes specialized workflows)
 ```
 
-### Semantics by Location
-
-Where a file lives tells the AI what it *is*:
-- `Tasks/fix-bug.md` → Actionable work
-- `Knowledge/fix-bug.md` → Documentation
-- Files use YAML frontmatter for metadata
-
 ### Privacy First
 
-Most personal operating data stays local (gitignored):
+Personal operating data stays local (gitignored):
 - `Tasks/` - your work
 - `Knowledge/` - your notes
 - `Resources/` - your samples
@@ -211,56 +138,10 @@ Some top-level configuration files (`AGENTS.md`, `GOALS.md`, `CLAUDE.md`, `CODEX
 
 ---
 
-## Example Usage
-
-**Daily**
-```
-"What should I work on today?"
-```
-
-**Capture ideas:**
-```
-Add to BACKLOG.md, then: "Process my backlog"
-```
-
-**Build something:**
-```
-"Let's brainstorm a new feature for [idea]"
-"Create a spec for [feature]"
-"Create a plan from this spec"
-```
-
-**Weekly:**
-```
-"Run weekly review"
-```
-
----
-
-## Documentation
-
-- [Build Your Personal OS](Tutorials/build-your-personal-os.md) - Complete guide
-- [Memory & Context](Tutorials/memory.md) - How agents remember
-- [Workflows](Workflows/README.md) - Daily + product/strategy workflows
-- [Canonical Skills](.agents/skills/README.md) - Runtime skill packaging and sync workflow
-- [Pi Agent Setup](Tutorials/pi-agent-setup.md) - Use this repo with Pi
-- [OpenClaw Setup](Tutorials/openclaw-setup.md) - Use this repo with OpenClaw
-- [Tutorials](Tutorials/README.md) - All learning guides
-
----
-
-## Tech Stack
-
-- **File Format:** Markdown with YAML frontmatter
-- **AI Agent:** Claude Code, Codex, Pi, OpenClaw, Cursor, or any coding agent
-- **Optional:** MCP integrations (Slack, Linear, Calendar, Atlassian, Granola)
-- **Version Control:** Git
-
----
 
 ## Evals
 
-This repo includes both structural and behavioral evals for skills.
+This repo includes structural, behavioral, routing, and memory-impact evals.
 
 Run:
 
@@ -281,6 +162,7 @@ python scripts/run_skill_evals.py --provider openai --model your-model-id
 Outputs are written to:
 
 - `Evals/skills/results/`
+- `Evals/memory/results/`
 
 Use these evals as a regression gate when updating `.agents/skills/`.
 
@@ -288,15 +170,25 @@ Use these evals as a regression gate when updating `.agents/skills/`.
 
 ## Long-Running Agent Principles
 
-This project follows three patterns from OpenAI guidance:
+Personal OS follows four operating patterns:
 - **Skills**: versioned procedures in `.agents/skills/*/SKILL.md`
 - **Shell execution**: run real tasks in terminal environments and produce artifacts
 - **Compaction-aware workflows**: structure long runs to preserve continuity
+- **Verification-first completion**: require fresh evidence before claiming work is done
 
 Security defaults:
 - Keep network access minimal and allowlist-based
 - Treat tool output as untrusted input
 - Use explicit review boundaries for generated artifacts
+
+---
+
+## Tech Stack
+
+- **File Format:** Markdown with YAML frontmatter
+- **Agent Runtimes:** Claude Code, Codex, Pi, OpenClaw, Cursor, and similar coding agent runtimes
+- **Optional Integrations:** MCP (Slack, Linear, Google Calendar, Atlassian, Granola)
+- **Version Control:** Git
 
 ---
 
