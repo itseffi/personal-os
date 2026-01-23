@@ -30,6 +30,27 @@ Your agentic personal operating system, built to automate high-leverage workflow
 
 ---
 
+## Architecture
+
+```mermaid
+flowchart TD
+    U["User Prompt"] --> A["Agent Runtime<br/>Claude Code | Codex | Pi | OpenClaw"]
+    A --> I["Instructions<br/>AGENTS.md + wrappers"]
+    A --> S["Skills<br/>.agents/skills/*/SKILL.md"]
+    A --> W["Workflows<br/>Workflows/*.md"]
+    A --> F["State + Context<br/>Tasks, GOALS, BACKLOG, Knowledge, Resources"]
+    A -. optional .-> M["MCP Integrations<br/>System/mcp + external services"]
+    A -. optional .-> D["Subagents<br/>runtime-dependent delegation"]
+    A --> E["Evals<br/>Evals/ + Evals/skills + scripts/run_skill_evals.py"]
+
+    classDef core fill:#ff9891,stroke:#2b2b2b,color:#111111,stroke-width:1.2px;
+    classDef optional fill:#ffd4d0,stroke:#2b2b2b,color:#111111,stroke-width:1.2px,stroke-dasharray: 4 3;
+    class U,A,I,S,W,F,E core;
+    class M,D optional;
+```
+
+---
+
 ## Agent Compatibility
 
 This repo is designed to work with Claude Code, Codex, Pi, and OpenClaw.
@@ -60,25 +81,6 @@ For Codex/OpenAI-style routing metadata, this repo includes:
   (Claude, Pi, and OpenClaw primarily use `SKILL.md` and do not require this file format.)
 
 ---
-
-## Architecture
-
-```mermaid
-flowchart TD
-    U["User Prompt"] --> A["Agent Runtime<br/>Claude Code | Codex | Pi | OpenClaw"]
-    A --> I["Instructions<br/>AGENTS.md + wrappers"]
-    A --> S["Skills<br/>.agents/skills/*/SKILL.md"]
-    A --> W["Workflows<br/>Workflows/*.md"]
-    A --> F["State + Context<br/>Tasks, GOALS, BACKLOG, Knowledge, Resources"]
-    A -. optional .-> M["MCP Integrations<br/>System/mcp + external services"]
-    A -. optional .-> D["Subagents<br/>runtime-dependent delegation"]
-    A --> E["Evals<br/>Evals/ + Evals/skills + scripts/run_skill_evals.py"]
-
-    classDef core fill:#ff9891,stroke:#2b2b2b,color:#111111,stroke-width:1.2px;
-    classDef optional fill:#ffd4d0,stroke:#2b2b2b,color:#111111,stroke-width:1.2px,stroke-dasharray: 4 3;
-    class U,A,I,S,W,F,E core;
-    class M,D optional;
-```
 
 ## Pi Local/Offline Setup (Optional)
 
