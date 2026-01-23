@@ -110,7 +110,7 @@ personal-os/
 └── System/             # MCP server, templates, integrations
 ```
 
-Semantics by location: `Tasks/*.md` = actionable work, `Knowledge/*.md` = reference context.
+Semantics by location: `Tasks/**/*.md` = actionable work, `Knowledge/**/*.md` = reference context.
 
 ---
 
