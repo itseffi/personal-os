@@ -173,16 +173,42 @@ Use skills from `.agents/skills/` (one folder per skill with `SKILL.md`).
 
 | Category | Skills | When to Use |
 |----------|--------|-------------|
-| `planning/` | brainstorming, writing-plans, hypothesis-design | Before starting - explore and plan |
+| `planning/` | brainstorming, writing-plans, hypothesis-design, prd-writing, spec-writing | Before starting - explore and plan |
 | `building/` | tdd, verification | Implementing and validating code |
 | `analysis/` | debugging, root-cause, mece, problem-structuring | Investigating and breaking down problems |
 | `research/` | interviews, jtbd, assumptions, experiments, ost, ost-intake, ost-target-selection | User research and discovery |
 | `decisions/` | decision-journal, reversibility, davci | Making and documenting decisions |
-| `strategy/` | crux-diagnosis, competitor-analysis, structured-product-strategy, limit-based-strategy, value-chain-mapping | Strategic planning |
+| `strategy/` | crux-diagnosis, competitor-analysis, structured-product-strategy, limit-based-strategy, value-chain-mapping, frontend-design, backend-design | Strategic planning |
 | `meetings/` | ideas-summary, hidden-agendas, influence, meeting-power-dynamics | Meeting prep and follow-up |
 | `stakeholders/` | power-map, difficult-conversations, stakeholder-risk-review, message-framing-comms, executive-update-review, challenging-stakeholder-questions | Managing relationships |
 
 Reference naturally: "Use brainstorming", "Run root cause analysis", "Analyze using JTBD", "Map stakeholder power"
+
+---
+
+## Skill Routing Policy (Execution-First)
+
+Default behavior is execution-first with minimal documentation overhead.
+
+1. Small coding tasks (single-file fix, low-risk change):
+   - Use direct edit or `systematic-debugging`
+   - Then run `verification`
+2. Medium coding tasks (multi-file but clear requirements):
+   - Use `writing-plans` first
+   - Then `tdd`
+   - Then `verification`
+3. Large/high-risk/cross-team initiatives:
+   - Use `prd-writing` first
+   - Then `writing-plans`
+   - Then `tdd`
+   - Then `verification`
+
+Use `prd-writing` only when one or more are true:
+- Scope is cross-team or multi-sprint
+- Tradeoffs or prioritization must be documented
+- Stakeholder alignment is required before implementation
+
+If none of the above is true, skip PRD and execute.
 
 ---
 
