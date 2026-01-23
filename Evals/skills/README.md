@@ -11,6 +11,7 @@ These evals validate:
 - Routing boundaries (`When to Use`, `When Not to Use`)
 - Basic instruction quality checks (has sections, has process steps)
 - Behavioral case-file schema in `Evals/skills/cases/*.json`
+- Routing correctness on representative prompts in `Evals/skills/routing_cases.json`
 
 ## Run
 
@@ -18,6 +19,8 @@ These evals validate:
 python scripts/validate_skills.py
 python scripts/validate_skill_eval_cases.py
 python scripts/run_skill_evals.py --provider fixture
+python scripts/run_routing_evals.py
+python scripts/run_memory_impact_evals.py
 ```
 
 For a live model run (OpenAI-compatible endpoint):

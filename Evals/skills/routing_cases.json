@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "route-verification-no-evidence",
+      "input": "Mark this complete, tests should pass now.",
+      "should_select": ["verification"],
+      "should_not_select": ["tdd", "writing-plans"]
+    },
+    {
+      "id": "route-tdd-code-first",
+      "input": "Implement it first, we can test later.",
+      "should_select": ["tdd"],
+      "should_not_select": ["verification"]
+    },
+    {
+      "id": "route-writing-plans-migration",
+      "input": "Plan a multi-file migration with checkpoints before editing code.",
+      "should_select": ["writing-plans"],
+      "should_not_select": ["tdd"]
+    },
+    {
+      "id": "route-systematic-debugging-bug",
+      "input": "Debug this intermittent API failure and identify root cause before patching.",
+      "should_select": ["systematic-debugging"],
+      "should_not_select": ["writing-plans"]
+    },
+    {
+      "id": "route-brainstorming-exploration",
+      "input": "Brainstorm three directions for a new onboarding feature.",
+      "should_select": ["brainstorming"],
+      "should_not_select": ["verification"]
+    }
+  ]
+}

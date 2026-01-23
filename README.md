@@ -268,6 +268,8 @@ Run:
 python scripts/validate_skills.py
 python scripts/validate_skill_eval_cases.py
 python scripts/run_skill_evals.py --provider fixture
+python scripts/run_routing_evals.py
+python scripts/run_memory_impact_evals.py
 ```
 
 Optional live-model run (OpenAI-compatible endpoint, local or remote):

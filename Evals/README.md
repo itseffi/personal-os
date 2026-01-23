@@ -90,6 +90,7 @@ Session evals are different from skill regression evals.
 
 - Session evals: this file (`Evals/`)
 - Skill evals: `Evals/skills/README.md`
+- Memory impact evals: `Evals/memory/README.md`
 
 ## Applying Learnings
 

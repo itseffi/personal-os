@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "daily-focus-goal-alignment",
+      "input": "What should I work on today?",
+      "baseline_response": "Work on any available high-priority task.",
+      "memory_search_response": "Prioritize unblocked P0/P1 tasks aligned to GOALS.md, and flag blocked work with next steps.",
+      "expected_when_enabled": [
+        "aligned to goals",
+        "unblocked",
+        "blocked work"
+      ],
+      "expected_missing_in_baseline": [
+        "aligned to goals",
+        "blocked work"
+      ]
+    },
+    {
+      "id": "backlog-processing-context-lookup",
+      "input": "Process my backlog.",
+      "baseline_response": "Convert backlog items into tasks.",
+      "memory_search_response": "Read Knowledge docs for context, detect duplicates against Tasks, then create scoped tasks with priorities.",
+      "expected_when_enabled": [
+        "knowledge docs",
+        "duplicates",
+        "priorities"
+      ],
+      "expected_missing_in_baseline": [
+        "duplicates",
+        "knowledge docs"
+      ]
+    },
+    {
+      "id": "recommend-top-three",
+      "input": "Give me today's top three tasks.",
+      "baseline_response": "Here are three tasks to work on.",
+      "memory_search_response": "Select top three based on priority, due date pressure, and GOALS alignment, then include verification evidence requirements.",
+      "expected_when_enabled": [
+        "priority",
+        "due date",
+        "goals alignment",
+        "verification evidence"
+      ],
+      "expected_missing_in_baseline": [
+        "goals alignment",
+        "verification evidence"
+      ]
+    }
+  ]
+}
