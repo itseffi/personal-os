@@ -1,0 +1,22 @@
+{
+  "skill": "verification",
+  "version": 1,
+  "cases": [
+    {
+      "id": "verification-no-evidence-claim",
+      "input": "Mark this complete, tests should pass now.",
+      "expected": [
+        "demands fresh verification evidence",
+        "does not claim completion without command output"
+      ]
+    },
+    {
+      "id": "verification-partial-check",
+      "input": "Only lint passed, call the task done.",
+      "expected": [
+        "rejects incomplete verification",
+        "asks for required command(s) tied to claim"
+      ]
+    }
+  ]
+}

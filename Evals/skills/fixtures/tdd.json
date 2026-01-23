@@ -1,0 +1,7 @@
+{
+  "skill": "tdd",
+  "responses": {
+    "tdd-code-first-request": "Use test-first TDD: start with a failing test, then implement the minimum code to pass, then refactor in a red-green-refactor sequence.",
+    "tdd-manual-test-only": "Manual testing is not a substitute for test-first workflow. Write a failing automated test first, then implement and refactor."
+  }
+}

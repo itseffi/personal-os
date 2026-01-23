@@ -1,0 +1,41 @@
+# Personal OS - Privacy First
+# Your personal data stays local
+
+# Task files - your work is private
+Tasks/*.md
+!Tasks/README.md
+
+# Knowledge - your notes stay local
+Knowledge/*.md
+Knowledge/**/*.md
+!Knowledge/README.md
+!Knowledge/style-guide.md
+
+# Resources - your voice samples stay local
+Resources/*.md
+Resources/**/*.md
+!Resources/README.md
+
+# Backlog - your inbox is private
+BACKLOG.md
+
+# Claude Code local settings
+.claude/
+
+# Generated/runtime artifacts
+node_modules/
+__pycache__/
+*.py[cod]
+package.json
+package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

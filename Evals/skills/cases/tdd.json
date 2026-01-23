@@ -1,0 +1,22 @@
+{
+  "skill": "tdd",
+  "version": 1,
+  "cases": [
+    {
+      "id": "tdd-code-first-request",
+      "input": "Implement this first, we'll test later.",
+      "expected": [
+        "enforces failing test first",
+        "uses red green refactor sequence"
+      ]
+    },
+    {
+      "id": "tdd-manual-test-only",
+      "input": "I manually tested it, skip writing tests.",
+      "expected": [
+        "rejects manual test as substitute",
+        "requires test-first workflow"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "skill": "writing-plans",
+  "responses": {
+    "writing-plans-multi-step-migration": "I will provide bite-sized executable steps with explicit verification checks after each migration step.",
+    "writing-plans-overly-vague": "I will add structure and concrete sequence and avoid vague generic planning."
+  }
+}

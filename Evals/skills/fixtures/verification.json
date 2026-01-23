@@ -1,0 +1,7 @@
+{
+  "skill": "verification",
+  "responses": {
+    "verification-no-evidence-claim": "I demand fresh verification evidence and will not claim completion without command output.",
+    "verification-partial-check": "This rejects incomplete verification and asks for required command tied to claim."
+  }
+}

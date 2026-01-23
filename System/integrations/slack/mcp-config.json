@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "slack": {
+      "command": "node",
+      "args": ["/path/to/servers/src/slack/dist/index.js"],
+      "env": {
+        "SLACK_BOT_TOKEN": "xoxb-your-token-here",
+        "SLACK_TEAM_ID": "T0123456789"
+      }
+    }
+  }
+}

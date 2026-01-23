@@ -1,0 +1,22 @@
+{
+  "skill": "writing-plans",
+  "version": 1,
+  "cases": [
+    {
+      "id": "writing-plans-multi-step-migration",
+      "input": "Plan a multi-file migration with validation checkpoints.",
+      "expected": [
+        "provides bite-sized executable steps",
+        "includes explicit verification checks"
+      ]
+    },
+    {
+      "id": "writing-plans-overly-vague",
+      "input": "Just give me a quick rough plan.",
+      "expected": [
+        "adds structure and concrete sequence",
+        "avoids vague generic planning"
+      ]
+    }
+  ]
+}
