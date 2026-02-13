@@ -1,5 +1,3 @@
-# Personal OS
-
 ![Agentic Personal OS Banner](Resources/assets/hero-banner-agentic-os.png)
 
 Your agentic personal operating system, built to automate high-leverage workflows with Claude Code, Codex, Pi, OpenClaw, and other coding agents and runtime platforms.
